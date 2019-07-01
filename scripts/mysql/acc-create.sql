@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('acc','7');
+#INSERT INTO version (table_name, table_version) values ('acc','7');
 CREATE TABLE `acc` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `method` char(16) NOT NULL DEFAULT '',
@@ -12,12 +12,12 @@ CREATE TABLE `acc` (
   `ms_duration` int(11) unsigned NOT NULL DEFAULT 0,
   `setuptime` int(11) unsigned NOT NULL DEFAULT 0,
   `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `callid_idx` (`callid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX callid_idx ON acc (callid);
 
-INSERT INTO version (table_name, table_version) values ('missed_calls','5');
+#INSERT INTO version (table_name, table_version) values ('missed_calls','5');
 CREATE TABLE `missed_calls` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `method` char(16) NOT NULL DEFAULT '',
@@ -29,8 +29,7 @@ CREATE TABLE `missed_calls` (
   `time` datetime NOT NULL,
   `setuptime` int(11) unsigned NOT NULL DEFAULT 0,
   `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `callid_idx` (`callid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE INDEX callid_idx ON missed_calls (callid);
 
