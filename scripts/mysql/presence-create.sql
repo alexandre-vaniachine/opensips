@@ -68,10 +68,9 @@ CREATE TABLE `xcap` (
   `doc_uri` char(255) NOT NULL,
   `port` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `account_doc_type_idx` (`username`,`domain`,`doc_type`,`doc_uri`)
+  UNIQUE KEY `account_doc_type_idx` (`username`,`domain`,`doc_type`,`doc_uri`),
+  KEY `source_idx` (`source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE INDEX source_idx ON xcap (source);
 
 #INSERT INTO version (table_name, table_version) values ('pua','8');
 CREATE TABLE `pua` (
@@ -95,10 +94,10 @@ CREATE TABLE `pua` (
   `remote_contact` char(255) DEFAULT NULL,
   `version` int(11) DEFAULT NULL,
   `extra_headers` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `del1_idx` (`pres_uri`,`event`),
+  KEY `del2_idx` (`expires`),
+  KEY `update_idx` (`pres_uri`,`pres_id`,`flag`,`event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX del1_idx ON pua (pres_uri, event);
-CREATE INDEX del2_idx ON pua (expires);
-CREATE INDEX update_idx ON pua (pres_uri, pres_id, flag, event);
 
