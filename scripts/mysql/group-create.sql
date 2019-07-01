@@ -14,8 +14,8 @@ CREATE TABLE `re_grp` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `reg_exp` char(128) NOT NULL DEFAULT '',
   `group_id` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `group_idx` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX group_idx ON re_grp (group_id);
 

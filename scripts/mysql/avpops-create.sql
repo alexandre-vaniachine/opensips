@@ -9,8 +9,8 @@ CREATE TABLE `usr_preferences` (
   `value` char(128) NOT NULL DEFAULT '',
   `last_modified` datetime NOT NULL DEFAULT '1900-01-01 00:00:01',
   PRIMARY KEY (`id`),
-  KEY `ua_idx` (`uuid`, `attribute`),
-  KEY `uda_idx` (`username`, `domain`, `attribute`),
+  KEY `ua_idx` (`uuid`,`attribute`),
+  KEY `uda_idx` (`username`,`domain`,`attribute`),
   KEY `value_idx` (`value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

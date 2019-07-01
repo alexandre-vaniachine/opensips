@@ -10,8 +10,9 @@ CREATE TABLE `silo` (
   `snd_time` int(11) NOT NULL DEFAULT 0,
   `ctype` char(255) DEFAULT NULL,
   `body` blob DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `account_idx` (`username`,`domain`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX account_idx ON silo (username, domain);
+
 

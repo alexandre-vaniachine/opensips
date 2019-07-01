@@ -58,5 +58,6 @@ CREATE TABLE `cc_calls` (
   UNIQUE KEY `unique_id` (`b2buaid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX b2buaid_idx ON cc_calls (b2buaid);
+# Already exists
+#CREATE INDEX b2buaid_idx ON cc_calls (b2buaid);
 

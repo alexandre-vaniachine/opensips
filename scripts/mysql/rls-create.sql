@@ -10,10 +10,9 @@ CREATE TABLE `rls_presentity` (
   `auth_state` int(11) NOT NULL,
   `reason` char(64) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`)
+  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`),
+  KEY `updated_idx` (`updated`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE INDEX updated_idx ON rls_presentity (updated);
 
 #INSERT INTO version (table_name, table_version) values ('rls_watchers','2');
 CREATE TABLE `rls_watchers` (

@@ -10,5 +10,6 @@ CREATE TABLE `domainpolicy` (
   UNIQUE KEY `rav_idx` (`rule`,`att`,`val`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX rule_idx ON domainpolicy (rule);
+#Duplicate index
+#CREATE INDEX rule_idx ON domainpolicy (rule);
 

@@ -6,8 +6,8 @@ CREATE TABLE `load_balancer` (
   `resources` char(255) NOT NULL,
   `probe_mode` int(11) unsigned NOT NULL DEFAULT 0,
   `description` char(128) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `dsturi_idx` (`dst_uri`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX dsturi_idx ON load_balancer (dst_uri);
 
