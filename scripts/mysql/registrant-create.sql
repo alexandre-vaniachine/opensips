@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('registrant','2');
+#INSERT INTO version (table_name, table_version) values ('registrant','2');
 CREATE TABLE `registrant` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `registrar` char(255) NOT NULL DEFAULT '',

@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('userblacklist','2');
+#INSERT INTO version (table_name, table_version) values ('userblacklist','2');
 CREATE TABLE `userblacklist` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL DEFAULT '',
@@ -10,7 +10,7 @@ CREATE TABLE `userblacklist` (
 
 CREATE INDEX userblacklist_idx ON userblacklist (username, domain, prefix);
 
-INSERT INTO version (table_name, table_version) values ('globalblacklist','2');
+#INSERT INTO version (table_name, table_version) values ('globalblacklist','2');
 CREATE TABLE `globalblacklist` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `prefix` char(64) NOT NULL DEFAULT '',

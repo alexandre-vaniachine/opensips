@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('cachedb','2');
+#INSERT INTO version (table_name, table_version) values ('cachedb','2');
 CREATE TABLE `cachedb` (
   `keyname` char(255) NOT NULL,
   `value` text NOT NULL,

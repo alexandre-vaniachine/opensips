@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('clusterer','4');
+#INSERT INTO version (table_name, table_version) values ('clusterer','4');
 CREATE TABLE `clusterer` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `cluster_id` int(10) NOT NULL,

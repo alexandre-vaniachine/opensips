@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('silo','6');
+#INSERT INTO version (table_name, table_version) values ('silo','6');
 CREATE TABLE `silo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `src_addr` char(255) NOT NULL DEFAULT '',

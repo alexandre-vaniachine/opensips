@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('tls_mgm','3');
+#INSERT INTO version (table_name, table_version) values ('tls_mgm','3');
 CREATE TABLE `tls_mgm` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `domain` char(64) NOT NULL,

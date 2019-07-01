@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('smpp','1');
+#INSERT INTO version (table_name, table_version) values ('smpp','1');
 CREATE TABLE `smpp` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` char(255) NOT NULL,

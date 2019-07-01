@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('presentity','5');
+#INSERT INTO version (table_name, table_version) values ('presentity','5');
 CREATE TABLE `presentity` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `presentity` (
   UNIQUE KEY `presentity_idx` (`username`,`domain`,`event`,`etag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('active_watchers','12');
+#INSERT INTO version (table_name, table_version) values ('active_watchers','12');
 CREATE TABLE `active_watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `presentity_uri` char(255) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `active_watchers` (
   UNIQUE KEY `active_watchers_idx` (`presentity_uri`,`callid`,`to_tag`,`from_tag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('watchers','4');
+#INSERT INTO version (table_name, table_version) values ('watchers','4');
 CREATE TABLE `watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `presentity_uri` char(255) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `watchers` (
   UNIQUE KEY `watcher_idx` (`presentity_uri`,`watcher_username`,`watcher_domain`,`event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('xcap','4');
+#INSERT INTO version (table_name, table_version) values ('xcap','4');
 CREATE TABLE `xcap` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `xcap` (
 
 CREATE INDEX source_idx ON xcap (source);
 
-INSERT INTO version (table_name, table_version) values ('pua','8');
+#INSERT INTO version (table_name, table_version) values ('pua','8');
 CREATE TABLE `pua` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pres_uri` char(255) NOT NULL,

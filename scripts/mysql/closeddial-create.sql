@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('closeddial','1');
+#INSERT INTO version (table_name, table_version) values ('closeddial','1');
 CREATE TABLE `closeddial` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL DEFAULT '',

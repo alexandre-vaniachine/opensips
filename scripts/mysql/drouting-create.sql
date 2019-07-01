@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('dr_gateways','6');
+#INSERT INTO version (table_name, table_version) values ('dr_gateways','6');
 CREATE TABLE `dr_gateways` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `gwid` char(64) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `dr_gateways` (
   UNIQUE KEY `dr_gw_idx` (`gwid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('dr_rules','3');
+#INSERT INTO version (table_name, table_version) values ('dr_rules','3');
 CREATE TABLE `dr_rules` (
   `ruleid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `groupid` char(255) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `dr_rules` (
   PRIMARY KEY (`ruleid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('dr_carriers','2');
+#INSERT INTO version (table_name, table_version) values ('dr_carriers','2');
 CREATE TABLE `dr_carriers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `carrierid` char(64) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `dr_carriers` (
   UNIQUE KEY `dr_carrier_idx` (`carrierid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('dr_groups','2');
+#INSERT INTO version (table_name, table_version) values ('dr_groups','2');
 CREATE TABLE `dr_groups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE `dr_groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('dr_partitions','1');
+#INSERT INTO version (table_name, table_version) values ('dr_partitions','1');
 CREATE TABLE `dr_partitions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `partition_name` char(255) NOT NULL,

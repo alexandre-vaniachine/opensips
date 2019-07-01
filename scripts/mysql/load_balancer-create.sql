@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('load_balancer','2');
+#INSERT INTO version (table_name, table_version) values ('load_balancer','2');
 CREATE TABLE `load_balancer` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `group_id` int(11) unsigned NOT NULL DEFAULT 0,

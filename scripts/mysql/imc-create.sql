@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('imc_rooms','2');
+#INSERT INTO version (table_name, table_version) values ('imc_rooms','2');
 CREATE TABLE `imc_rooms` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` char(64) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE `imc_rooms` (
   UNIQUE KEY `name_domain_idx` (`name`,`domain`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('imc_members','2');
+#INSERT INTO version (table_name, table_version) values ('imc_members','2');
 CREATE TABLE `imc_members` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL,

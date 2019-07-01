@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('domainpolicy','3');
+#INSERT INTO version (table_name, table_version) values ('domainpolicy','3');
 CREATE TABLE `domainpolicy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `rule` char(255) NOT NULL,

@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('freeswitch','1');
+#INSERT INTO version (table_name, table_version) values ('freeswitch','1');
 CREATE TABLE `freeswitch` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) DEFAULT NULL,

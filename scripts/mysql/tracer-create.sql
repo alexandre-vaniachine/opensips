@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('sip_trace','5');
+#INSERT INTO version (table_name, table_version) values ('sip_trace','5');
 CREATE TABLE `sip_trace` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `time_stamp` datetime NOT NULL DEFAULT '1900-01-01 00:00:01',
