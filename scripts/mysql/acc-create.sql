@@ -1,34 +1,36 @@
 INSERT INTO version (table_name, table_version) values ('acc','7');
-CREATE TABLE acc (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    method CHAR(16) DEFAULT '' NOT NULL,
-    from_tag CHAR(64) DEFAULT '' NOT NULL,
-    to_tag CHAR(64) DEFAULT '' NOT NULL,
-    callid CHAR(64) DEFAULT '' NOT NULL,
-    sip_code CHAR(3) DEFAULT '' NOT NULL,
-    sip_reason CHAR(32) DEFAULT '' NOT NULL,
-    time DATETIME NOT NULL,
-    duration INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    ms_duration INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    setuptime INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    created DATETIME DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `acc` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `method` char(16) NOT NULL DEFAULT '',
+  `from_tag` char(64) NOT NULL DEFAULT '',
+  `to_tag` char(64) NOT NULL DEFAULT '',
+  `callid` char(64) NOT NULL DEFAULT '',
+  `sip_code` char(3) NOT NULL DEFAULT '',
+  `sip_reason` char(32) NOT NULL DEFAULT '',
+  `time` datetime NOT NULL,
+  `duration` int(11) unsigned NOT NULL DEFAULT 0,
+  `ms_duration` int(11) unsigned NOT NULL DEFAULT 0,
+  `setuptime` int(11) unsigned NOT NULL DEFAULT 0,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX callid_idx ON acc (callid);
 
 INSERT INTO version (table_name, table_version) values ('missed_calls','5');
-CREATE TABLE missed_calls (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    method CHAR(16) DEFAULT '' NOT NULL,
-    from_tag CHAR(64) DEFAULT '' NOT NULL,
-    to_tag CHAR(64) DEFAULT '' NOT NULL,
-    callid CHAR(64) DEFAULT '' NOT NULL,
-    sip_code CHAR(3) DEFAULT '' NOT NULL,
-    sip_reason CHAR(32) DEFAULT '' NOT NULL,
-    time DATETIME NOT NULL,
-    setuptime INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    created DATETIME DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `missed_calls` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `method` char(16) NOT NULL DEFAULT '',
+  `from_tag` char(64) NOT NULL DEFAULT '',
+  `to_tag` char(64) NOT NULL DEFAULT '',
+  `callid` char(64) NOT NULL DEFAULT '',
+  `sip_code` char(3) NOT NULL DEFAULT '',
+  `sip_reason` char(32) NOT NULL DEFAULT '',
+  `time` datetime NOT NULL,
+  `setuptime` int(11) unsigned NOT NULL DEFAULT 0,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX callid_idx ON missed_calls (callid);
 

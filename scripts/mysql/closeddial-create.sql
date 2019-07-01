@@ -1,14 +1,15 @@
 INSERT INTO version (table_name, table_version) values ('closeddial','1');
-CREATE TABLE closeddial (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    username CHAR(64) DEFAULT '' NOT NULL,
-    domain CHAR(64) DEFAULT '' NOT NULL,
-    cd_username CHAR(64) DEFAULT '' NOT NULL,
-    cd_domain CHAR(64) DEFAULT '' NOT NULL,
-    group_id CHAR(64) DEFAULT '' NOT NULL,
-    new_uri CHAR(255) DEFAULT '' NOT NULL,
-    CONSTRAINT cd_idx1 UNIQUE (username, domain, cd_domain, cd_username, group_id)
-) ENGINE=InnoDB;
+CREATE TABLE `closeddial` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` char(64) NOT NULL DEFAULT '',
+  `domain` char(64) NOT NULL DEFAULT '',
+  `cd_username` char(64) NOT NULL DEFAULT '',
+  `cd_domain` char(64) NOT NULL DEFAULT '',
+  `group_id` char(64) NOT NULL DEFAULT '',
+  `new_uri` char(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cd_idx1` (`username`,`domain`,`cd_domain`,`cd_username`,`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX cd_idx2 ON closeddial (group_id);
 CREATE INDEX cd_idx3 ON closeddial (cd_username);

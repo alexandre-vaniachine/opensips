@@ -1,16 +1,17 @@
 INSERT INTO version (table_name, table_version) values ('silo','6');
-CREATE TABLE silo (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    src_addr CHAR(255) DEFAULT '' NOT NULL,
-    dst_addr CHAR(255) DEFAULT '' NOT NULL,
-    username CHAR(64) DEFAULT '' NOT NULL,
-    domain CHAR(64) DEFAULT '' NOT NULL,
-    inc_time INT DEFAULT 0 NOT NULL,
-    exp_time INT DEFAULT 0 NOT NULL,
-    snd_time INT DEFAULT 0 NOT NULL,
-    ctype CHAR(255) DEFAULT NULL,
-    body BLOB DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `silo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `src_addr` char(255) NOT NULL DEFAULT '',
+  `dst_addr` char(255) NOT NULL DEFAULT '',
+  `username` char(64) NOT NULL DEFAULT '',
+  `domain` char(64) NOT NULL DEFAULT '',
+  `inc_time` int(11) NOT NULL DEFAULT 0,
+  `exp_time` int(11) NOT NULL DEFAULT 0,
+  `snd_time` int(11) NOT NULL DEFAULT 0,
+  `ctype` char(255) DEFAULT NULL,
+  `body` blob DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX account_idx ON silo (username, domain);
 

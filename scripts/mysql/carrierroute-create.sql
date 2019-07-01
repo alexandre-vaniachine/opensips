@@ -1,36 +1,39 @@
 INSERT INTO version (table_name, table_version) values ('carrierroute','3');
-CREATE TABLE carrierroute (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    carrier INT(10) UNSIGNED DEFAULT 0 NOT NULL,
-    domain CHAR(64) DEFAULT '' NOT NULL,
-    scan_prefix CHAR(64) DEFAULT '' NOT NULL,
-    flags INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    mask INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    prob FLOAT DEFAULT 0 NOT NULL,
-    strip INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    rewrite_host CHAR(255) DEFAULT '' NOT NULL,
-    rewrite_prefix CHAR(64) DEFAULT '' NOT NULL,
-    rewrite_suffix CHAR(64) DEFAULT '' NOT NULL,
-    description CHAR(255) DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `carrierroute` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `carrier` int(10) unsigned NOT NULL DEFAULT 0,
+  `domain` char(64) NOT NULL DEFAULT '',
+  `scan_prefix` char(64) NOT NULL DEFAULT '',
+  `flags` int(11) unsigned NOT NULL DEFAULT 0,
+  `mask` int(11) unsigned NOT NULL DEFAULT 0,
+  `prob` float NOT NULL DEFAULT 0,
+  `strip` int(11) unsigned NOT NULL DEFAULT 0,
+  `rewrite_host` char(255) NOT NULL DEFAULT '',
+  `rewrite_prefix` char(64) NOT NULL DEFAULT '',
+  `rewrite_suffix` char(64) NOT NULL DEFAULT '',
+  `description` char(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO version (table_name, table_version) values ('carrierfailureroute','2');
-CREATE TABLE carrierfailureroute (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    carrier INT(10) UNSIGNED DEFAULT 0 NOT NULL,
-    domain CHAR(64) DEFAULT '' NOT NULL,
-    scan_prefix CHAR(64) DEFAULT '' NOT NULL,
-    host_name CHAR(255) DEFAULT '' NOT NULL,
-    reply_code CHAR(3) DEFAULT '' NOT NULL,
-    flags INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    mask INT(11) UNSIGNED DEFAULT 0 NOT NULL,
-    next_domain CHAR(64) DEFAULT '' NOT NULL,
-    description CHAR(255) DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `carrierfailureroute` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `carrier` int(10) unsigned NOT NULL DEFAULT 0,
+  `domain` char(64) NOT NULL DEFAULT '',
+  `scan_prefix` char(64) NOT NULL DEFAULT '',
+  `host_name` char(255) NOT NULL DEFAULT '',
+  `reply_code` char(3) NOT NULL DEFAULT '',
+  `flags` int(11) unsigned NOT NULL DEFAULT 0,
+  `mask` int(11) unsigned NOT NULL DEFAULT 0,
+  `next_domain` char(64) NOT NULL DEFAULT '',
+  `description` char(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO version (table_name, table_version) values ('route_tree','2');
-CREATE TABLE route_tree (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    carrier CHAR(64) DEFAULT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `route_tree` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `carrier` char(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

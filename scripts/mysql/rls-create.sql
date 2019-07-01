@@ -1,42 +1,44 @@
 INSERT INTO version (table_name, table_version) values ('rls_presentity','1');
-CREATE TABLE rls_presentity (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    rlsubs_did CHAR(255) NOT NULL,
-    resource_uri CHAR(255) NOT NULL,
-    content_type CHAR(255) NOT NULL,
-    presence_state BLOB NOT NULL,
-    expires INT(11) NOT NULL,
-    updated INT(11) NOT NULL,
-    auth_state INT(11) NOT NULL,
-    reason CHAR(64) NOT NULL,
-    CONSTRAINT rls_presentity_idx UNIQUE (rlsubs_did, resource_uri)
-) ENGINE=InnoDB;
+CREATE TABLE `rls_presentity` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `rlsubs_did` char(255) NOT NULL,
+  `resource_uri` char(255) NOT NULL,
+  `content_type` char(255) NOT NULL,
+  `presence_state` blob NOT NULL,
+  `expires` int(11) NOT NULL,
+  `updated` int(11) NOT NULL,
+  `auth_state` int(11) NOT NULL,
+  `reason` char(64) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX updated_idx ON rls_presentity (updated);
 
 INSERT INTO version (table_name, table_version) values ('rls_watchers','2');
-CREATE TABLE rls_watchers (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    presentity_uri CHAR(255) NOT NULL,
-    to_user CHAR(64) NOT NULL,
-    to_domain CHAR(64) NOT NULL,
-    watcher_username CHAR(64) NOT NULL,
-    watcher_domain CHAR(64) NOT NULL,
-    event CHAR(64) DEFAULT 'presence' NOT NULL,
-    event_id CHAR(64),
-    to_tag CHAR(64) NOT NULL,
-    from_tag CHAR(64) NOT NULL,
-    callid CHAR(64) NOT NULL,
-    local_cseq INT(11) NOT NULL,
-    remote_cseq INT(11) NOT NULL,
-    contact CHAR(64) NOT NULL,
-    record_route TEXT,
-    expires INT(11) NOT NULL,
-    status INT(11) DEFAULT 2 NOT NULL,
-    reason CHAR(64) NOT NULL,
-    version INT(11) DEFAULT 0 NOT NULL,
-    socket_info CHAR(64) NOT NULL,
-    local_contact CHAR(255) NOT NULL,
-    CONSTRAINT rls_watcher_idx UNIQUE (presentity_uri, callid, to_tag, from_tag)
-) ENGINE=InnoDB;
+CREATE TABLE `rls_watchers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `presentity_uri` char(255) NOT NULL,
+  `to_user` char(64) NOT NULL,
+  `to_domain` char(64) NOT NULL,
+  `watcher_username` char(64) NOT NULL,
+  `watcher_domain` char(64) NOT NULL,
+  `event` char(64) NOT NULL DEFAULT 'presence',
+  `event_id` char(64) DEFAULT NULL,
+  `to_tag` char(64) NOT NULL,
+  `from_tag` char(64) NOT NULL,
+  `callid` char(64) NOT NULL,
+  `local_cseq` int(11) NOT NULL,
+  `remote_cseq` int(11) NOT NULL,
+  `contact` char(64) NOT NULL,
+  `record_route` text DEFAULT NULL,
+  `expires` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 2,
+  `reason` char(64) NOT NULL,
+  `version` int(11) NOT NULL DEFAULT 0,
+  `socket_info` char(64) NOT NULL,
+  `local_contact` char(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `rls_watcher_idx` (`presentity_uri`,`callid`,`to_tag`,`from_tag`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

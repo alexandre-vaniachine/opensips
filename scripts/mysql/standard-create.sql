@@ -1,6 +1,6 @@
-CREATE TABLE version (
-    table_name CHAR(32) NOT NULL,
-    table_version INT UNSIGNED DEFAULT 0 NOT NULL,
-    CONSTRAINT t_name_idx UNIQUE (table_name)
-) ENGINE=InnoDB;
+CREATE TABLE `version` (
+  `table_name` char(32) NOT NULL,
+  `table_version` int(10) unsigned NOT NULL DEFAULT 0,
+  UNIQUE KEY `t_name_idx` (`table_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

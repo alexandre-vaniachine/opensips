@@ -1,19 +1,21 @@
 INSERT INTO version (table_name, table_version) values ('grp','3');
-CREATE TABLE grp (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    username CHAR(64) DEFAULT '' NOT NULL,
-    domain CHAR(64) DEFAULT '' NOT NULL,
-    grp CHAR(64) DEFAULT '' NOT NULL,
-    last_modified DATETIME DEFAULT '1900-01-01 00:00:01' NOT NULL,
-    CONSTRAINT account_group_idx UNIQUE (username, domain, grp)
-) ENGINE=InnoDB;
+CREATE TABLE `grp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` char(64) NOT NULL DEFAULT '',
+  `domain` char(64) NOT NULL DEFAULT '',
+  `grp` char(64) NOT NULL DEFAULT '',
+  `last_modified` datetime NOT NULL DEFAULT '1900-01-01 00:00:01',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `account_group_idx` (`username`,`domain`,`grp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO version (table_name, table_version) values ('re_grp','2');
-CREATE TABLE re_grp (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    reg_exp CHAR(128) DEFAULT '' NOT NULL,
-    group_id INT(11) DEFAULT 0 NOT NULL
-) ENGINE=InnoDB;
+CREATE TABLE `re_grp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `reg_exp` char(128) NOT NULL DEFAULT '',
+  `group_id` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE INDEX group_idx ON re_grp (group_id);
 
