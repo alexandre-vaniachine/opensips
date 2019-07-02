@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('address','5');
+#INSERT INTO version (table_name, table_version) values ('address','5');
 CREATE TABLE `address` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `grp` smallint(5) unsigned NOT NULL DEFAULT 0,

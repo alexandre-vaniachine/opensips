@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('emergency_routing','1');
+#INSERT INTO version (table_name, table_version) values ('emergency_routing','1');
 CREATE TABLE `emergency_routing` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `selectiveRoutingID` char(11) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE `emergency_routing` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('emergency_report','1');
+#INSERT INTO version (table_name, table_version) values ('emergency_report','1');
 CREATE TABLE `emergency_report` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `callid` char(25) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `emergency_report` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('emergency_service_provider','1');
+#INSERT INTO version (table_name, table_version) values ('emergency_service_provider','1');
 CREATE TABLE `emergency_service_provider` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `organizationName` char(50) NOT NULL,

@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('subscriber','7');
+#INSERT INTO version (table_name, table_version) values ('subscriber','7');
 CREATE TABLE `subscriber` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL DEFAULT '',
@@ -9,12 +9,11 @@ CREATE TABLE `subscriber` (
   `ha1b` char(64) NOT NULL DEFAULT '',
   `rpid` char(64) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `account_idx` (`username`,`domain`)
+  UNIQUE KEY `account_idx` (`username`,`domain`),
+  KEY `username_idx` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX username_idx ON subscriber (username);
-
-INSERT INTO version (table_name, table_version) values ('uri','2');
+#INSERT INTO version (table_name, table_version) values ('uri','2');
 CREATE TABLE `uri` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL DEFAULT '',

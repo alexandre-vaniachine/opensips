@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('carrierroute','3');
+#INSERT INTO version (table_name, table_version) values ('carrierroute','3');
 CREATE TABLE `carrierroute` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `carrier` int(10) unsigned NOT NULL DEFAULT 0,
@@ -15,7 +15,7 @@ CREATE TABLE `carrierroute` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('carrierfailureroute','2');
+#INSERT INTO version (table_name, table_version) values ('carrierfailureroute','2');
 CREATE TABLE `carrierfailureroute` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `carrier` int(10) unsigned NOT NULL DEFAULT 0,
@@ -30,7 +30,7 @@ CREATE TABLE `carrierfailureroute` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('route_tree','2');
+#INSERT INTO version (table_name, table_version) values ('route_tree','2');
 CREATE TABLE `route_tree` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `carrier` char(64) DEFAULT NULL,

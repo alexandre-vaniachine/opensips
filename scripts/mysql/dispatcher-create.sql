@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('dispatcher','8');
+#INSERT INTO version (table_name, table_version) values ('dispatcher','8');
 CREATE TABLE `dispatcher` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `setid` int(11) NOT NULL DEFAULT 0,

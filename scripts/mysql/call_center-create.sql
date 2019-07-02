@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('cc_flows','1');
+#INSERT INTO version (table_name, table_version) values ('cc_flows','1');
 CREATE TABLE `cc_flows` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `flowid` char(64) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE `cc_flows` (
   UNIQUE KEY `unique_flowid` (`flowid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('cc_agents','1');
+#INSERT INTO version (table_name, table_version) values ('cc_agents','1');
 CREATE TABLE `cc_agents` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `agentid` char(128) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE `cc_agents` (
   UNIQUE KEY `unique_agentid` (`agentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('cc_cdrs','1');
+#INSERT INTO version (table_name, table_version) values ('cc_cdrs','1');
 CREATE TABLE `cc_cdrs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `caller` char(64) NOT NULL,
@@ -58,5 +58,6 @@ CREATE TABLE `cc_calls` (
   UNIQUE KEY `unique_id` (`b2buaid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX b2buaid_idx ON cc_calls (b2buaid);
+# Already exists
+#CREATE INDEX b2buaid_idx ON cc_calls (b2buaid);
 

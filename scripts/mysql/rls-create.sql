@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('rls_presentity','1');
+#INSERT INTO version (table_name, table_version) values ('rls_presentity','1');
 CREATE TABLE `rls_presentity` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `rlsubs_did` char(255) NOT NULL,
@@ -10,12 +10,11 @@ CREATE TABLE `rls_presentity` (
   `auth_state` int(11) NOT NULL,
   `reason` char(64) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`)
+  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`),
+  KEY `updated_idx` (`updated`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX updated_idx ON rls_presentity (updated);
-
-INSERT INTO version (table_name, table_version) values ('rls_watchers','2');
+#INSERT INTO version (table_name, table_version) values ('rls_watchers','2');
 CREATE TABLE `rls_watchers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `presentity_uri` char(255) NOT NULL,

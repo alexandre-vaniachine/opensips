@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('b2b_entities','1');
+#INSERT INTO version (table_name, table_version) values ('b2b_entities','1');
 CREATE TABLE `b2b_entities` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` int(2) NOT NULL,
@@ -28,12 +28,11 @@ CREATE TABLE `b2b_entities` (
   `leg_contact` char(255) DEFAULT NULL,
   `leg_sockinfo` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `b2b_entities_idx` (`type`,`tag0`,`tag1`,`callid`)
+  UNIQUE KEY `b2b_entities_idx` (`type`,`tag0`,`tag1`,`callid`),
+  KEY `b2b_entities_param` (`param`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX b2b_entities_param ON b2b_entities (param);
-
-INSERT INTO version (table_name, table_version) values ('b2b_logic','3');
+#INSERT INTO version (table_name, table_version) values ('b2b_logic','3');
 CREATE TABLE `b2b_logic` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `si_key` char(64) NOT NULL,

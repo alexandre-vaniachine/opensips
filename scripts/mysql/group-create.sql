@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('grp','3');
+#INSERT INTO version (table_name, table_version) values ('grp','3');
 CREATE TABLE `grp` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL DEFAULT '',
@@ -9,13 +9,13 @@ CREATE TABLE `grp` (
   UNIQUE KEY `account_group_idx` (`username`,`domain`,`grp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO version (table_name, table_version) values ('re_grp','2');
+#INSERT INTO version (table_name, table_version) values ('re_grp','2');
 CREATE TABLE `re_grp` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `reg_exp` char(128) NOT NULL DEFAULT '',
   `group_id` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `group_idx` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX group_idx ON re_grp (group_id);
 

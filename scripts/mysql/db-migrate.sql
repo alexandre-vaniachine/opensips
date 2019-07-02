@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-DROP PROCEDURE IF EXISTS `OSIPS_DB_MIGRATE_2_4_TO_3_0`;
+#DROP PROCEDURE IF EXISTS `OSIPS_DB_MIGRATE_2_4_TO_3_0`;
 DELIMITER $$
 CREATE DEFINER=`root`@`%` PROCEDURE `OSIPS_DB_MIGRATE_2_4_TO_3_0`(
 	IN old_db CHAR(64), IN new_db CHAR(64))

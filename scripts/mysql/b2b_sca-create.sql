@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('b2b_sca','1');
+#INSERT INTO version (table_name, table_version) values ('b2b_sca','1');
 CREATE TABLE `b2b_sca` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `shared_line` char(64) NOT NULL,

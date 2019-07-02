@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('sip_trace','5');
+#INSERT INTO version (table_name, table_version) values ('sip_trace','5');
 CREATE TABLE `sip_trace` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `time_stamp` datetime NOT NULL DEFAULT '1900-01-01 00:00:01',
@@ -15,11 +15,11 @@ CREATE TABLE `sip_trace` (
   `to_port` int(5) unsigned NOT NULL,
   `fromtag` char(64) NOT NULL DEFAULT '',
   `direction` char(4) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `trace_attrs_idx` (`trace_attrs`),
+  KEY `date_idx` (`time_stamp`),
+  KEY `fromip_idx` (`from_ip`),
+  KEY `callid_idx` (`callid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE INDEX trace_attrs_idx ON sip_trace (trace_attrs);
-CREATE INDEX date_idx ON sip_trace (time_stamp);
-CREATE INDEX fromip_idx ON sip_trace (from_ip);
-CREATE INDEX callid_idx ON sip_trace (callid);
 

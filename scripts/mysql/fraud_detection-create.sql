@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('fraud_detection','1');
+#INSERT INTO version (table_name, table_version) values ('fraud_detection','1');
 CREATE TABLE `fraud_detection` (
   `ruleid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `profileid` int(10) unsigned NOT NULL,

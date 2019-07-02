@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('cpl','2');
+#INSERT INTO version (table_name, table_version) values ('cpl','2');
 CREATE TABLE `cpl` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` char(64) NOT NULL,

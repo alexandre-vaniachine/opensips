@@ -1,4 +1,4 @@
-INSERT INTO version (table_name, table_version) values ('dialog','10');
+#INSERT INTO version (table_name, table_version) values ('dialog','10');
 CREATE TABLE `dialog` (
   `dlg_id` bigint(10) unsigned NOT NULL,
   `callid` char(255) NOT NULL,
