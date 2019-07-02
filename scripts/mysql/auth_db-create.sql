@@ -9,8 +9,7 @@ CREATE TABLE `subscriber` (
   `ha1b` char(64) NOT NULL DEFAULT '',
   `rpid` char(64) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `account_idx` (`username`,`domain`),
-  KEY `username_idx` (`username`)
+  UNIQUE KEY `account_idx` (`username`,`domain`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #INSERT INTO version (table_name, table_version) values ('uri','2');
